@@ -34,6 +34,10 @@ pip install -e .
 
 ## Run an experiment 
 
+```shell
+cd pymarl-master
+```
+
 Run an experiment on 5m\_vs\_6m of SMAC: 
 ```shell
 python src/main.py --config=macc --env-config=sc2 with env_args.map_name=5m_vs_6m
