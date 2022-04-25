@@ -1,0 +1,79 @@
+# --- QMIX specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "latent_q_learner"
+double_q: True
+mixer: "qmix_hidden"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+mac: "macc_mac"
+agent: "macc"
+latent_dim: 16
+NN_HIDDEN_SIZE: 60
+recon_loss_weight: 0.0001
+mi_loss_weight: 0.001
+similarity_loss_weight: 0
+num_heads: 1
+attn_dim: 16
+
+vae_beta: 1
+q_loss_ratio: 1000
+rnn_hidden_dim_ally: 32
+rnn_hidden_dim_enemy: 32
+softTemperature: 1
+
+var_floor: 0.002
+save_model: False
+isSoftmax: False
+
+rnn_hidden_state: 64
+inseparable: False
+
+state_info_dic:  {'3s_vs_5z': {'nf_al': 5, 'nf_en': 4, 'n_enemies': 5}, 
+                  '5m_vs_6m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 6}, 
+                '10m_vs_11m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 11}, 
+                '27m_vs_30m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 30}, 
+                      'MMM2': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 12}, 
+              '3s5z_vs_3s6z': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 9}, 
+                  'corridor': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 24}, 
+                  '6h_vs_8z': {'nf_al': 4, 'nf_en': 4, 'n_enemies': 8}, 
+                 '2s_vs_1sc': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 1}, 
+              'bane_vs_bane': {'nf_al': 6, 'nf_en': 5, 'n_enemies': 24}, 
+                '2c_vs_64zg': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 64}, 
+          'so_many_baneling': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 32}, 
+                    '1c3s5z': {'nf_al': 8, 'nf_en': 7, 'n_enemies': 9},
+                      '2s3z': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 5},
+                      '3s5z': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 8},
+                     '5s10z': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 15},
+                       'MMM': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 10},
+                     'MMM30': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 13},
+                     'MMM31': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 13},
+                     'MMM32': {'nf_al': 7, 'nf_en': 6, 'n_enemies': 14},
+                '10m_vs_12m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 11},
+                '15m_vs_17m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 17},
+                '15m_vs_18m': {'nf_al': 4, 'nf_en': 3, 'n_enemies': 18},
+                '3c_vs_97zg': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 97},
+                '3c_vs_98zg': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 98},
+               '3c_vs_100zg': {'nf_al': 5, 'nf_en': 3, 'n_enemies': 100},
+                 '6s_vs_10z': {'nf_al': 5, 'nf_en': 4, 'n_enemies': 10},
+                 '6s_vs_11z': {'nf_al': 5, 'nf_en': 4, 'n_enemies': 11},
+                 '6s_vs_12z': {'nf_al': 5, 'nf_en': 4, 'n_enemies': 12},
+          '1c3s5z_vs_1c3s6z': {'nf_al': 8, 'nf_en': 7, 'n_enemies': 10},}
+
+name: "macc"

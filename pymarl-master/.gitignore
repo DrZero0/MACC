@@ -1,0 +1,9 @@
+results/
+.vscode/
+output/
+pics/
+**/__pycache__/
+**/**/__pycache__/
+**/**/**/__pycache__/
+3rdparty/
+__MACOSX/
